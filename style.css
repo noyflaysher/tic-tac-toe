@@ -7,10 +7,7 @@
   }
 
   body {
-    
     background-color: rgb(154, 213, 240);
-    align-content: center;
-    align-items: center;
     color: black;
   }
 
@@ -33,27 +30,28 @@
   .result{
     font-size: 30px;
     font-weight: 600;
+    margin-top: 2px;
   }
 
   .container{
     margin:30px 10px;
     display: grid;
+    grid-template-columns:repeat(3,auto) ;
     height: fit-content;
     justify-content: center;
     align-content: center;
-    grid-template-columns:repeat(3,auto) ;
   }
 
   .box{
-    font-size:30px ;
-    font-weight: 500;
     cursor: pointer;
-    width: 115px;
-    height:115px;
-    border: 1px solid black;
-    align-items: center;
     text-align: center;
     padding: 30px;
+    border: 1px solid black;
+    font-size:30px ;
+    font-weight: 500;
+    width: 115px;
+    height:115px;
+    align-items: center;
   }
   
   .box:first-child,
@@ -87,6 +85,11 @@
     width:220px;
     text-align: center;
     margin: auto;
+  }
+
+  .newGame:hover{
+    border:3px solid blue;
+    color:blue;
   }
 
   .showNewGame{
