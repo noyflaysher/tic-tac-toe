@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(154, 213, 240);
+    align-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  .wrapper{
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header{
+    text-align: center;
+  }
+
+  .result{
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .container{
+    margin:30px 10px;
+    display: grid;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns:repeat(3,auto) ;
+  }
+
+  .box{
+    font-size:30px ;
+    font-weight: 500;
+    cursor: pointer;
+    width: 115px;
+    height:115px;
+    border: 1px solid black;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .box:first-child,
+  .box:nth-child(2),
+  .box:nth-child(3){
+    border-top: none;
+  }
+
+
+  .box:nth-child(3n+1){
+    border-left: none;
+  }
+
+  .box:nth-child(3n+3){
+    border-right: none;
+  }
+
+  .box:last-child,
+  .box:nth-child(7),
+  .box:nth-child(8){
+    border-bottom: none;
+  }
+
+  .newGame{
+    visibility: hidden;
+    font-size:30px ;
+    padding: 10px;
+    border:3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    width:220px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .showNewGame{
+    visibility: visible;
+  }
+
+
