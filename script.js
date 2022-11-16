@@ -1,12 +1,10 @@
 const container=document.getElementById("container");
 const result=document.getElementById("result");
 const restart=document.getElementById("newGame");
-const winCombinations=[
-[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]
-];
 let boxes;
 let turnX=true;
 let correctCombination;
+const winCombinations=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 newGame("");
 restart.addEventListener("click",()=>newGame("restart"));
@@ -15,10 +13,10 @@ function newGame(type){
     let box;
     for(let i=0;i<9;i++){
         if(type==="restart"){
-            container.style.pointerEvents="unset";
-            boxes[i].removeEventListener("click",clickBox);
             boxes[i].innerText="";
             result.innerText="";
+            container.style.pointerEvents="unset";
+            boxes[i].removeEventListener("click",clickBox);
             turnX=true;
             restart.classList.remove("showNewGame");
             correctCombination.every((item)=> boxes[item].style.background="none");
@@ -54,7 +52,7 @@ function clickBox(e){
         correctCombination.every((item)=> boxes[item].style.background="blue");
         gameOver("win",currentSelection);
     }
-    else if(isGameDraw()){
+    else if(finishGame()){
         gameOver("draw", currentSelection);
     }
 }
@@ -67,7 +65,7 @@ function checkWin(currentSelection){
 
 }
 
-function isGameDraw(){
+function finishGame(){
     return [...boxes].every((box)=>box.innerText==="X" || box.innerText==="O");
 }
 
@@ -75,7 +73,7 @@ function gameOver(type,currentSelection){
     if(type==="win"){
         result.innerText="The winner is: " + currentSelection;
     }else{
-        result.innerText="Match Draw ";
+        result.innerText="The game is finish - no winner";
     }
 
     container.style.pointerEvents="none";
